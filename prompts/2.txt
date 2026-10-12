@@ -23,7 +23,7 @@ public class A {
   protected long k(int a) {
     return 1;
   }
-}
+} 
 public class B extends A {
   protected long k(int a) {
     return 2;

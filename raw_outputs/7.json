@@ -1,0 +1,1 @@
+{"verdict":"NO - COMPILATION ERROR","explanation":"In CODE2, class B contains two methods with the identical signature public long m(int a), one returning 2 and one returning 0. Java does not permit duplicate method signatures within the same class, so CODE2 will not compile.","junit_test":null}

@@ -1,0 +1,6 @@
+{
+  "verdict": "NO - BEHAVIOR CHANGE",
+  "explanation": "In Code1, C has its own field k=20, so new C().test() returns 20L and new C().k is 20. In Code2, C inherits k=10 from A, so new C().test() returns 10L and new C().k is 10. This is a concrete behavioral difference in return values and visible state.",
+  "junit_test": "import org.junit.Test;\nimport static org.junit.Assert.*;\n\npublic class BehaviorTest {\n    @Test\n    public void testCTestMethod() {\n        C c = new C();\n        // In Code1: C.k = 20, so test() returns 20L\n        // In Code2: C inherits k = 10 from A, so test() returns 10L\n        assertEquals(20L, c.test());\n    }\n}"
+}
+

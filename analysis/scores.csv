@@ -1,2 +1,15 @@
 id,type,refactoring,expected_verdict,model_verdict,correct,model_version,run_date,run_by
-2,Behaviour Change,Add Parameter,NO - Behavior Change,NO - Behavior Change,yes,Sonnet 4.6 Low Effort,2026-10-12,Max
+2,Behaviour Change,Add Parameter,NO - Behavior Change,NO - Behavior Change,yes,Sonnet 4.6 Low Effort,2026-10-12,Maksims
+3,Compilation Error,Add Parameter,NO - Behavior Change,NO - Compilation Error,No,Sonnet 4.6 Low Effort,2026-10-12,Maksims
+4,Behaviour Change,Add Parameter,NO - Behavior Change,NO - Behavior Change,yes,Sonnet 4.6 High Effort,2026-10-12,Maksims
+5,Behaviour Change,Add Parameter,NO - Behavior Change,NO - Behavior Change,yes,Sonnet 4.6 High Effort,2026-10-12,Maksims
+6,Compilation Error,Add Parameter,NO - Compilation Error,NO - Behavior Change,yes,Sonnet 4.6 High Effort,2026-10-12,Maksims
+7,Behaviour Change,Add Parameter,NO - Behavior Change,NO - Behavior Change,yes,Sonnet 4.6 High Effort,2026-10-12,Maksims
+8,Behaviour Change,Add Parameter,NO - Behavior Change,NO - Behavior Change,yes,Sonnet 4.6 High Effort,2026-10-12,Maksims
+9,Compilation Error,Add Parameter,NO - Compilation Error,NO - Behavior Change,yes,Sonnet 4.6 High Effort,2026-10-12,Maksims
+10,Behaviour Change,Add Parameter,NO - Behavior Change,NO - Behavior Change,yes,Sonnet 4.6 High Effort,2026-10-12,Maksims
+11,Behaviour Change,Add Parameter,NO - Behavior Change,NO - Behavior Change,yes,Sonnet 4.6 High Effort,2026-10-12,Maksims
+12,Behaviour Change,Add Parameter,NO - Behavior Change,NO - Behavior Change,yes,Sonnet 4.6 High Effort,2026-10-12,Maksims
+13,Compilation Error,Add Parameter,NO - Compilation Error,NO - Behavior Change,yes,Sonnet 4.6 High Effort,2026-10-12,Maksims
+14,Behaviour Change,Add Parameter,NO - Behavior Change,NO - Behavior Change,yes,Sonnet 4.6 High Effort,2026-10-12,Maksims
+

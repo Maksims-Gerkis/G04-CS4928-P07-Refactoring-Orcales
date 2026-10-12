@@ -1,0 +1,5 @@
+{
+  "verdict": "NO - BEHAVIOR CHANGE",
+  "explanation": "In CODE1, B.test() calls k(2) which resolves to B.k(long a) (the only visible k in B), returning 1. In CODE2, B now also has k(int a), which is a more specific match for the int literal 2, so k(2) resolves to k(int a) returning 2. The return value of test() changes from 1 to 2.",
+  "junit_test": "import org.junit.Test;\nimport static org.junit.Assert.*;\n\npublic class BehaviorTest {\n    @Test\n    public void testReturnValue() {\n        B b = new B();\n        assertEquals(1L, b.test());\n    }\n}"
+}

@@ -1,0 +1,1 @@
+{"verdict":"NO - COMPILATION ERROR","explanation":"In CODE2, class B's method m() references field f, but B no longer declares f and its superclass A has no field f either. The subclass C's field f is not visible to B's method. This causes an unresolved symbol compilation error in B.m().","junit_test":null}
