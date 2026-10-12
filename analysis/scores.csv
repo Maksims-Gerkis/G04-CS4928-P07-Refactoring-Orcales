@@ -1,1 +1,2 @@
 id,type,refactoring,expected_verdict,model_verdict,correct,model_version,run_date,run_by
+2,Behaviour Change,Add Parameter,NO - Behavior Change,NO - Behavior Change,yes,Sonnet 4.6 Low Effort,2026-10-12,Max
