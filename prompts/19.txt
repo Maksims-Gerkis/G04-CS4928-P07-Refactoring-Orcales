@@ -1,0 +1,70 @@
+You are a coding assistant specializing in refactoring analysis.
+
+Consider the following initial program:
+<<<CODE1
+public class A {
+  int f;
+}
+public class B extends A{
+  private int n;
+}
+public class C extends B{
+ void m() {
+   super.f = 1;
+ }
+}
+CODE1>>>
+
+After applying a refactoring, it yields the following resulting program:
+<<<CODE2
+public class A {
+  int f;
+}
+public class B extends A{
+  private int f;
+}
+public class C extends B{
+ void m() {
+   super.f = 1;
+ }
+}
+CODE2>>>
+
+Check the following:
+
+1. Compilation correctness:
+The resulting program compiles successfully, with no syntax, type, name-resolution, import, or linkage errors.
+
+2. Behavioral equivalence:
+The initial and resulting programs preserve the same observable behavior for all public APIs and externally visible effects, including return values, printed output, thrown exceptions, and externally visible state changes.
+
+Return ONLY valid JSON. Do not use markdown. Do not add any text before or after the JSON.
+
+Use exactly this schema:
+
+{
+  "verdict": "YES | NO - COMPILATION ERROR | NO - BEHAVIOR CHANGE",
+  "explanation": "1-4 sentences",
+  "junit_test": null
+}
+
+Rules:
+- "verdict" must be exactly one of:
+  "YES"
+  "NO - COMPILATION ERROR"
+  "NO - BEHAVIOR CHANGE"
+- "explanation" must briefly justify the answer with concrete evidence.
+- "junit_test" must be null unless the verdict is "NO - BEHAVIOR CHANGE".
+- If "junit_test" is not null, it must contain exactly one deterministic JUnit test as a complete Java source file.
+- The content of "junit_test" must be directly copyable into a Java IDE such as VS Code.
+- The exact same generated test code must compile and run against both code1 and code2 without any modification.
+- The test must expose a behavioral difference by producing one outcome on code1 and a different outcome on code2.
+- The test must include all necessary imports, exactly one public test class, and exactly one test method.
+- The test must be minimal, concrete, deterministic, and focused on the changed public behavior.
+- The test must not rely on randomness, time, concurrency, network, filesystem, or environment-specific behavior.
+- Do not invent compilation errors.
+- Do not claim behavior change unless you can point to a specific differing return value, output, exception, or externally visible state.
+- Do not include markdown fences such as ```java inside "junit_test".
+- Write "junit_test" as plain Java code text.
+
+Return JSON only.

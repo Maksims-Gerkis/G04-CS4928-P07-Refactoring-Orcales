@@ -1,0 +1,1 @@
+{"verdict":"NO - COMPILATION ERROR","explanation":"In CODE2, p1.B's import p2.* is overridden by the same-package class p1.C, so 'extends C' in p1.B resolves to p1.C. This creates a circular inheritance: p1.C extends p1.B and p1.B extends p1.C, which is a compilation error.","junit_test":null}

@@ -1,0 +1,3 @@
+{"verdict": "YES",
+  "explanation": "In CODE2, class B has a private field f that hides A.f, but since B.f is private, it is not accessible from C. The expression super.f in C.m() resolves to A.f in both CODE1 and CODE2, so the observable behavior (setting A.f to 1) is identical. The refactoring compiles correctly as field hiding is valid Java.",
+  "junit_test": null}

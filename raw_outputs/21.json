@@ -1,0 +1,3 @@
+{"verdict":"YES",
+  "explanation":"Renaming the private method n() to k() in class B is valid because private methods do not override superclass methods in Java. B's private k() does not override A's public k(), so calling k() on a B instance via an A reference still dispatches to A.k(). The private method was inaccessible externally, so no observable behavior changes.",
+  "junit_test":null}

@@ -1,0 +1,3 @@
+{"verdict":"NO - BEHAVIOR CHANGE",
+  "explanation":"In CODE1, B extends b.C (via import b.) so B.test() returns 10. In CODE2, a.C now exists (renamed from A), and same-package resolution takes precedence over the wildcard import, so B extends a.C and B.test() returns 20. This is a concrete behavioral difference.",
+  "junit_test":"package a;\nimport org.junit.Test;\nimport static org.junit.Assert.;\n\npublic class BehaviorTest {\n    @Test\n    public void testBTestReturn() {\n        B b = new B();\n        assertEquals(10, b.test());\n    }\n}"}

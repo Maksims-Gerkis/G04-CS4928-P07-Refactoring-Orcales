@@ -1,0 +1,3 @@
+{"verdict": "NO - BEHAVIOR CHANGE",
+  "explanation": "In CODE1, B.k() calls A.m() which returns 10. In CODE2, B.k() calls itself recursively with no base case, causing a StackOverflowError instead of returning 10. This is a clear behavioral difference.",
+  "junit_test": "import org.junit.Test;\nimport static org.junit.Assert.*;\n\npublic class BehaviorTest {\n    @Test\n    public void testKReturns10() {\n        A a = new A();\n        A.B b = a.new B();\n        assertEquals(10, b.k());\n    }\n}"}

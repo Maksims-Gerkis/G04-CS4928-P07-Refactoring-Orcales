@@ -1,0 +1,3 @@
+{"verdict":"NO - BEHAVIOR CHANGE",
+  "explanation":"In CODE1, C.test() returns super.n which resolves to A.n=1 (since B does not declare n). In CODE2, A's field is renamed to k, but B also has k=2 which hides A.k=1, so C.test() returns super.k which resolves to B.k=2. Thus test() returns 1 in CODE1 but 2 in CODE2.",
+  "junit_test":"import org.junit.Test;\nimport static org.junit.Assert.*;\n\npublic class BehaviorTest {\n    @Test\n    public void testReturnValue() {\n        C c = new C();\n        assertEquals(1L, c.test());\n    }\n}"}

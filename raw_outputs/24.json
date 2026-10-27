@@ -1,0 +1,3 @@
+{"verdict":"NO - BEHAVIOR CHANGE",
+  "explanation":"In CODE1, the local variable is named 'y' and the method returns the field 'x' (value 1). In CODE2, the local variable is renamed to 'x', which shadows the field 'x', so the method returns the local 'x' (value 0). The return value of m() differs: 1 in CODE1 vs 0 in CODE2.",
+  "junit_test":"import org.junit.Test;\nimport static org.junit.Assert.*;\n\npublic class ATest {\n    @Test\n    public void testMReturnValue() {\n        A a = new A();\n        assertEquals(1, a.m());\n    }\n}"}

@@ -1,0 +1,3 @@
+{"verdict":"NO - COMPILATION ERROR",
+  "explanation":"The interface I declares int equals(Object o), which conflicts with Object.equals(Object) that returns boolean. Since int is not return-type-substitutable for boolean, this is a compile-time error per JLS §9.2. Every class implementing interface I would inherit Object.equals(Object) returning boolean, which is incompatible with the interface method returning int.",
+  "junit_test":null}

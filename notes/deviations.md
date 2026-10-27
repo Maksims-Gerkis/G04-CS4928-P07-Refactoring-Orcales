@@ -46,7 +46,31 @@ Our Setup
 -
 - 12/10/2026 : Case 12, test ID14 Replicated output "SAME" but slighty different text,Ran by Maksims
 -
-- 12/10/2026 : Case 13, test ID14 Replicated output "SAME" but slighty different text,also worth a mention there is text describing its reasoning for verdict which i didnt include as i dont see him including in the paper as well so he might have just left it out or possibly had metioned it somewhere. Example:
+- 12/10/2026 : Case 13, test ID15 Replicated output "SAME" but slighty different text,also worth a mention there is text describing its reasoning for verdict which i didnt include as i dont see him including in the paper as well so he might have just left it out or possibly had metioned it somewhere. Example:
+-
+- 12/10/2026 : Case 14,test ID16 Replicated output "SAME" but slighty different text,ran by Marks
+-
+- 12/10/2026 : Case 15,test ID17 Replicated output "SAME" but slighty different text,ran by Marks
+-
+- 20/10/2026 : Case 16,test ID18 Replicated output "SAME" but slighty different text,ran by Marks
+-
+- 20/10/2026 : Case 17,test ID19 Replicated output "SAME" but slighty different text,ran by Marks
 - 
+- 20/10/2026 : Case 18,test ID20 Replicated a different output to the expected one,ran by Marks
+- 
+- 20/10/2026 : Case 19,test ID21 Replicated a different output to the expected one,ran by Marks
+- 
+- 20/10/2026 : Case 20,test ID50 Replicated output "SAME" but slighty different text,ran by Marks
+- 
+- 20/10/2026 : Case 21,test ID51 Replicated output "SAME" but slighty different text,ran by Marks
+- 
+- 20/10/2026 : Case 22,test ID53 Replicated output "SAME" but slighty different text,ran by Marks
+- 
+- 20/10/2026 : Case 23,test ID54 Replicated output "SAME" but slighty different text,ran by Marks
+- 
+- 20/10/2026 : Case 24,test ID55 Replicated output "SAME" but slighty different text,ran by Marks
+-
+- 20/10/2026 : Case 25,test ID56 Replicated output "SAME" but slighty different text,ran by Marks
+-
 - The key issue is in CODE2: B contains m() which uses A.this.k(). However, A.this is only valid inside an inner class (to refer to the enclosing instance of A). In B, which is a top-level class extending A, the expression A.this is not valid — B is not an inner class of A, so A.this cannot be used there. This will cause a compilation error.
 -Ran by Maksims
