@@ -85,16 +85,5 @@ powershell -ExecutionPolicy Bypass -File design\make_results.ps1
 - `compile_gate.ps1` compiles every case's original and resulting program. It writes the logs to `design/compile_gate/logs/` and a summary to `design/compile_gate/compile_results.csv`.
 - `make_results.ps1` applies the compile check to the saved verdicts. It writes `design/results.csv` and prints the totals.
 
-## Deviations and limitations
-
-- **Interface:** the authors ran Claude Sonnet 4.6 through the web interface with default settings. We used the API with effort set to high. Cases 2 and 3 were first run on the website as a pilot, and that pilot run is not counted.
-- **Run date:** our runs were made in October–November 2026, after the paper's runs, so the model may have been updated in between.
-- **Sample size:** 25 of the 226 cases.
-- **BC scoring:** BC cases are scored on the verdict only. The model's generated JUnit tests were not executed, although the paper's correctness rule requires this.
-- **Case 56:** not run with the model. The compile check decides it without the model.
-- **Case 21:** the saved prompt contains the authors' prompt twice.
-- **Renamed outputs:** the outputs for cases 50, 51, 53, 54 and 55 were originally saved as 22–26 (run order) and were renamed to their case IDs on 6 Nov 2026.
-- **Design verification:** the compile check was tested on the same cases that motivated it.
-
 See `notes/deviations.md` for the full run log.
 
