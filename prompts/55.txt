@@ -2,35 +2,27 @@ You are a coding assistant specializing in refactoring analysis.
 
 Consider the following initial program:
 <<<CODE1
-public class A {
-    void m(Object m){
-        System.out.println("A");
-    }
-}
-class B extends A{
+class A {
+    int y = 2;
+    int main() {
 
-    void k(String m){
-        System.out.println("B");
-    }
-    void f(){
-        m("1");
+        int x = 1;
+        System.out.println(y);
+        return 0;
     }
 }
 CODE1>>>
 
 After applying a refactoring, it yields the following resulting program:
 <<<CODE2
-public class A {
-    void m(Object m){
-        System.out.println("A");
-    }
-}
-class B extends A{
-    void m(String m){
-        System.out.println("B");
-    }
-    void f(){
-        A.this.m("1");
+class A {
+    int y = 2;
+    int main() {
+        final int y = 1;
+
+        int x = y;
+        System.out.println(A.super.y);
+        return 0;
     }
 }
 CODE2>>>

@@ -3,28 +3,40 @@ You are a coding assistant specializing in refactoring analysis.
 Consider the following initial program:
 <<<CODE1
 public class A {
-  public long k(){
-    return 3;
-  }
+	public int k() {
+		return 10;
+	}
 }
 public class B extends A {
-  public long m(){
-    return B.this.k();
-  }
+	public int k() {
+		return 20;
+	}
+	public int m() {
+		return super.k();
+	}
+	public int test() {
+		return m();
+	}
 }
 CODE1>>>
 
 After applying a refactoring, it yields the following resulting program:
 <<<CODE2
 public class A {
-  public long k(){
-    return 3;
-  }
-  public long m(){
-    return B.this.k();
-  }
+	public int k() {
+		return 10;
+	}
+	public int m() {
+		return this.k();
+	}
 }
 public class B extends A {
+	public int k() {
+		return 20;
+	}
+	public int test() {
+		return m();
+	}
 }
 CODE2>>>
 
