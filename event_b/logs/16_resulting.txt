@@ -1,0 +1,4 @@
+tests/16/a/BehaviorTest.java:3: error: <identifier> expected
+import static org.junit.Assert.;
+                               ^
+1 error

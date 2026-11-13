@@ -1,0 +1,13 @@
+JUnit version 4.13.2
+.E
+Time: 0.006
+There was 1 failure:
+1) testMReturnValue(BehaviorTest)
+org.junit.ComparisonFailure: expected:<[1]0> but was:<[2]0>
+	at org.junit.Assert.assertEquals(Assert.java:117)
+	at org.junit.Assert.assertEquals(Assert.java:146)
+	at BehaviorTest.testMReturnValue(BehaviorTest.java:19)
+
+FAILURES!!!
+Tests run: 1,  Failures: 1
+
