@@ -51,3 +51,26 @@ The reference test is our ground truth. **Never send it to the model.**
 |---|---|---|
 | CounterVisibleTest (2 tests) | PASS | PASS |
 | CounterReferenceTest (1 test) | PASS | FAIL (expected 2, was 3) |
+
+## Results (13 Nov 2026)
+
+### seed1
+- **Claude's verdict:** `NO - BEHAVIOR CHANGE` (`raw_outputs/seed1.json`).
+- **Claude's test:** `tests/seed1/CounterTest.java`. It passes on the original (`OK (1 test)`) and fails on the resulting program (`expected:<2> but was:<3>`), so the case is **confirmed**.
+- **Logs:** `logs/seed1_original.txt` and `logs/seed1_resulting.txt`, run locally in PowerShell.
+
+### The 13 BC cases from M2
+Each case's saved `junit_test` (from `raw_outputs/<id>.json`) is in `tests/<id>/`, and was run against `cases/<id>/original` and `cases/<id>/resulting`. Logs are in `logs/<id>_<version>.txt`, and the summary is in `comparison.csv`.
+
+| Outcome | Cases |
+|---|---|
+| Confirmed: passes on original, fails on resulting | 2, 4, 6, 8, 10, 12, 14, 18, 20, 50, 53, 54 (12) |
+| Test does not compile | 16 |
+
+Case 16's saved output contains `import static org.junit.Assert.;`, with the `*` missing. With the `*` restored, the test confirms the change, but the saved output is what counts.
+
+**Before and after:** BC was 13/13 verdict-only; with tests executed it is 12/13. seed1 goes from accepted-unverified to confirmed.
+
+### How the BC results were produced
+- The BC test logs were produced by `run_bc_tests.py`, an AI-written script, run with Python 3 and JDK 21 on Linux.
+- To re-run it on Windows, change the classpath separator `:` to `;` in the script.
