@@ -1,6 +1,6 @@
 JUnit version 4.13.2
 .E
-Time: 0.007
+Time: 0.013
 There was 1 failure:
 1) testTestMethod(p2.BehaviorTest)
 java.lang.AssertionError: expected:<0> but was:<10>

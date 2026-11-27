@@ -1,6 +1,7 @@
-﻿javac : C:\Users\marks\Desktop\cs4928\G04-CS4928-P07-Refactoring-Orcales\cases\7\resulting\p2\B.java:7: error: method m(int) is already defined in class B
-At C:\Users\marks\Desktop\cs4928\G04-CS4928-P07-Refactoring-Orcales\design\compile_gate.ps1:16 char:5
-+     javac -cp $jar -d $out $src 2>&1 | Out-File "design\compile_gate\ ...
+﻿javac : C:\Users\marks\Desktop\cs4928\G04-CS4928-P07-Refactoring-Orcales\cases\7\resulting\p2\B.java:7: error: method 
+m(int) is already defined in class B
+At C:\Users\marks\Desktop\cs4928\G04-CS4928-P07-Refactoring-Orcales\design\compile_gate.ps1:18 char:5
++     javac -cp $jar -d $out $src 2>&1 | Out-File (Join-Path $logs "$($ ...
 +     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     + CategoryInfo          : NotSpecified: (C:\Users\marks\...ined in class B:String) [], RemoteException
     + FullyQualifiedErrorId : NativeCommandError

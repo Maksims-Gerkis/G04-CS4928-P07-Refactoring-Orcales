@@ -1,6 +1,7 @@
-﻿javac : C:\Users\marks\Desktop\cs4928\G04-CS4928-P07-Refactoring-Orcales\cases\13\resulting\p2\A.java:4: error: cannot find symbol
-At C:\Users\marks\Desktop\cs4928\G04-CS4928-P07-Refactoring-Orcales\design\compile_gate.ps1:16 char:5
-+     javac -cp $jar -d $out $src 2>&1 | Out-File "design\compile_gate\ ...
+﻿javac : C:\Users\marks\Desktop\cs4928\G04-CS4928-P07-Refactoring-Orcales\cases\13\resulting\p2\A.java:4: error: cannot 
+find symbol
+At C:\Users\marks\Desktop\cs4928\G04-CS4928-P07-Refactoring-Orcales\design\compile_gate.ps1:18 char:5
++     javac -cp $jar -d $out $src 2>&1 | Out-File (Join-Path $logs "$($ ...
 +     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     + CategoryInfo          : NotSpecified: (C:\Users\marks\...not find symbol:String) [], RemoteException
     + FullyQualifiedErrorId : NativeCommandError

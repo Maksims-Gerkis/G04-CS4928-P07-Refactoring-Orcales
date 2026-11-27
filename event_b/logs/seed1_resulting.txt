@@ -1,6 +1,6 @@
 JUnit version 4.13.2
 .E
-Time: 0.015
+Time: 0.016
 There was 1 failure:
 1) testDoubleNextReturnValue(CounterTest)
 java.lang.AssertionError: expected:<2> but was:<3>

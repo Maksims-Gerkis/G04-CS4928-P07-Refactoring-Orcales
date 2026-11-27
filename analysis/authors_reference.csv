@@ -1,0 +1,26 @@
+id,bug_type,refactoring,tool,authors_verdict,authors_correct
+2,BC,Add Parameter,Eclipse,NO - BEHAVIOR CHANGE,yes
+3,CE,Add Parameter,NetBeans,NO - COMPILATION ERROR,yes
+4,BC,Encapsulate Field,NetBeans,NO - BEHAVIOR CHANGE,yes
+6,BC,Move Method,Eclipse,NO - BEHAVIOR CHANGE,yes
+7,CE,Move Method,Eclipse,NO - COMPILATION ERROR,yes
+8,BC,Pull Up Field,Eclipse,NO - BEHAVIOR CHANGE,yes
+9,CE,Push Down Field,NetBeans,NO - COMPILATION ERROR,yes
+10,BC,Pull Up Method,Eclipse,NO - BEHAVIOR CHANGE,yes
+11,CE,Pull Up Method,Eclipse,NO - COMPILATION ERROR,yes
+12,BC,Push Down Method,Eclipse,NO - BEHAVIOR CHANGE,yes
+13,CE,Push Down Field,NetBeans,NO - COMPILATION ERROR,yes
+14,BC,Push Down Method,Eclipse,NO - BEHAVIOR CHANGE,yes
+15,CE,Push Down Method,Eclipse,NO - COMPILATION ERROR,yes
+16,BC,Rename Class,Eclipse,NO - BEHAVIOR CHANGE,yes
+17,CE,Rename Class,Eclipse,NO - COMPILATION ERROR,yes
+18,BC,Rename Field,NetBeans,NO - BEHAVIOR CHANGE,yes
+19,CE,Rename Field,Eclipse,YES,no
+20,BC,Rename Method,NetBeans,YES,no
+21,CE,Rename Method,Eclipse,NO - COMPILATION ERROR,yes
+50,BC,Rename Variable,NetBeans,NO - BEHAVIOR CHANGE,yes
+51,CE,Rename Method,NetBeans,NO - COMPILATION ERROR,yes
+53,BC,Rename Variable,NetBeans,NO - BEHAVIOR CHANGE,yes
+54,BC,Rename Method,NetBeans,NO - BEHAVIOR CHANGE,yes
+55,CE,Rename Method,NetBeans,NO - COMPILATION ERROR,yes
+56,CE,Extract Local Variable,NetBeans,NO - COMPILATION ERROR,yes

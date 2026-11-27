@@ -56,7 +56,7 @@ The reference test is our ground truth. **Never send it to the model.**
 
 ### seed1
 - **Claude's verdict:** `NO - BEHAVIOR CHANGE` (`raw_outputs/seed1.json`).
-- **Claude's test:** `tests/seed1/CounterTest.java`. It passes on the original (`OK (1 test)`) and fails on the resulting program (`expected:<2> but was:<3>`), so the case is **confirmed**.
+- **Claude's test:** `tests/seed1/CounterTest.java` (renamed from `Countertest.java` so the file name matches the class). It passes on the original (`OK (1 test)`) and fails on the resulting program (`expected:<2> but was:<3>`), so the case is **confirmed**.
 - **Logs:** `logs/seed1_original.txt` and `logs/seed1_resulting.txt`, run locally in PowerShell.
 
 ### The 13 BC cases from M2
@@ -71,6 +71,19 @@ Case 16's saved output contains `import static org.junit.Assert.;`, with the `*`
 
 **Before and after:** BC was 13/13 verdict-only; with tests executed it is 12/13. seed1 goes from accepted-unverified to confirmed.
 
-### How the BC results were produced
-- The BC test logs were produced by `run_bc_tests.py`, an AI-written script, run with Python 3 and JDK 21 on Linux.
-- To re-run it on Windows, change the classpath separator `:` to `;` in the script.
+### How the results are produced
+Run this from the repository root:
+```powershell
+powershell -ExecutionPolicy Bypass -File event_b\run_bc_tests.ps1
+```
+For each of the 13 BC cases and seed1, the script:
+1. reads Claude's reply (`raw_outputs/<id>.json`, or `raw_outputs/seed1.json` here);
+2. writes the `junit_test` to `tests/<id>/`;
+3. compiles and runs it against `original` and `resulting`;
+4. writes `logs/<id>_<version>.txt` and `comparison.csv`.
+
+It works in Windows PowerShell 5.1 and PowerShell 7, and needs JDK 21.
+
+Replies 2, 14 and 50 are not strictly valid JSON as saved, because of copy errors. The `raw_json` column in `comparison.csv` records how each reply was read. Under a strict rule (invalid JSON counts as wrong), cases 14 and 50 would have no usable test, giving 10/13.
+
+These results were first produced by an AI-written Python script on Linux. That script was replaced by `run_bc_tests.ps1`, which reproduces every outcome and every extracted test.

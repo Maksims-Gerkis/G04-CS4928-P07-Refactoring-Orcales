@@ -1,6 +1,6 @@
 JUnit version 4.13.2
 .E
-Time: 0.006
+Time: 0.016
 There was 1 failure:
 1) testOutputIs100(RenameHidesFieldTest)
 org.junit.ComparisonFailure: expected:<[10]0> but was:<[]0>

@@ -1,4 +1,10 @@
-tests/16/a/BehaviorTest.java:3: error: <identifier> expected
+javac.exe : event_b\tests\16\a\BehaviorTest.java:3: error: <identifier> expected
+At C:\Users\marks\Desktop\cs4928\G04-CS4928-P07-Refactoring-Orcales\event_b\run_bc_tests.ps1:25 char:11
++   $log = (& javac -cp $cp -d $outDir $files 2>&1 | Out-String)
++           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (event_b\tests\1...ifier> expected:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
 import static org.junit.Assert.;
                                ^
 1 error

@@ -1,4 +1,4 @@
-"case","bug_type","resulting_compiles","claude_verdict_frozen","correct_frozen","verdict_with_gate","correct_with_gate"
+﻿"case","bug_type","resulting_compiles","claude_verdict_frozen","correct_frozen","verdict_with_gate","correct_with_gate"
 "2","BC","True","NO - BEHAVIOR CHANGE","True","NO - BEHAVIOR CHANGE","True"
 "3","CE","False","NO - BEHAVIOR CHANGE","False","NO - COMPILATION ERROR","True"
 "4","BC","True","NO - BEHAVIOR CHANGE","True","NO - BEHAVIOR CHANGE","True"

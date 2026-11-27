@@ -1,6 +1,6 @@
 JUnit version 4.13.2
 .E
-Time: 0.008
+Time: 0
 There was 1 failure:
 1) testKReturns10(BehaviorTest)
 java.lang.StackOverflowError

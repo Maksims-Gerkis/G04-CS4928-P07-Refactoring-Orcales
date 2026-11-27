@@ -1,26 +1,26 @@
-id,bug_type,refactoring,tool,expected_verdict,model_verdict,correct,authors_verdict,authors_correct,agrees_with_authors,model_version,run_date,run_by,note
-2,BC,Add Parameter,Eclipse,NO - BEHAVIOR CHANGE,NO - BEHAVIOR CHANGE,yes,NO - BEHAVIOR CHANGE,yes,yes,Sonnet 4.6 Low Effort,2026-10-12,Maksims,website pilot run (low effort)
-3,CE,Add Parameter,NetBeans,NO - COMPILATION ERROR,NO - BEHAVIOR CHANGE,no,NO - COMPILATION ERROR,yes,no,Sonnet 4.6 Low Effort,2026-10-12,Maksims,website pilot run (low effort)
-4,BC,Encapsulate Field,NetBeans,NO - BEHAVIOR CHANGE,NO - BEHAVIOR CHANGE,yes,NO - BEHAVIOR CHANGE,yes,yes,Sonnet 4.6 High Effort,2026-10-12,Maksims,
-6,BC,Move Method,Eclipse,NO - BEHAVIOR CHANGE,NO - BEHAVIOR CHANGE,yes,NO - BEHAVIOR CHANGE,yes,yes,Sonnet 4.6 High Effort,2026-10-12,Maksims,
-7,CE,Move Method,Eclipse,NO - COMPILATION ERROR,NO - COMPILATION ERROR,yes,NO - COMPILATION ERROR,yes,yes,Sonnet 4.6 High Effort,2026-10-12,Maksims,
-8,BC,Pull Up Field,Eclipse,NO - BEHAVIOR CHANGE,NO - BEHAVIOR CHANGE,yes,NO - BEHAVIOR CHANGE,yes,yes,Sonnet 4.6 High Effort,2026-10-12,Maksims,
-9,CE,Push Down Field,NetBeans,NO - COMPILATION ERROR,NO - COMPILATION ERROR,yes,NO - COMPILATION ERROR,yes,yes,Sonnet 4.6 High Effort,2026-10-12,Maksims,
-10,BC,Pull Up Method,Eclipse,NO - BEHAVIOR CHANGE,NO - BEHAVIOR CHANGE,yes,NO - BEHAVIOR CHANGE,yes,yes,Sonnet 4.6 High Effort,2026-10-12,Maksims,
-11,CE,Pull Up Method,Eclipse,NO - COMPILATION ERROR,NO - COMPILATION ERROR,yes,NO - COMPILATION ERROR,yes,yes,Sonnet 4.6 High Effort,2026-10-12,Maksims,
-12,BC,Push Down Method,Eclipse,NO - BEHAVIOR CHANGE,NO - BEHAVIOR CHANGE,yes,NO - BEHAVIOR CHANGE,yes,yes,Sonnet 4.6 High Effort,2026-10-12,Maksims,
-13,CE,Push Down Field,NetBeans,NO - COMPILATION ERROR,NO - COMPILATION ERROR,yes,NO - COMPILATION ERROR,yes,yes,Sonnet 4.6 High Effort,2026-10-12,Maksims,
-14,BC,Push Down Method,Eclipse,NO - BEHAVIOR CHANGE,NO - BEHAVIOR CHANGE,yes,NO - BEHAVIOR CHANGE,yes,yes,Sonnet 4.6 High Effort,2026-10-12,Maksims,
-15,CE,Push Down Method,Eclipse,NO - COMPILATION ERROR,NO - COMPILATION ERROR,yes,NO - COMPILATION ERROR,yes,yes,Sonnet 4.6 High Effort,2026-10-12,Maksims,
-16,BC,Rename Class,Eclipse,NO - BEHAVIOR CHANGE,NO - BEHAVIOR CHANGE,yes,NO - BEHAVIOR CHANGE,yes,yes,Sonnet 4.6 High Effort,2026-10-20,Marks,
-17,CE,Rename Class,Eclipse,NO - COMPILATION ERROR,NO - COMPILATION ERROR,yes,NO - COMPILATION ERROR,yes,yes,Sonnet 4.6 High Effort,2026-10-20,Marks,
-18,BC,Rename Field,NetBeans,NO - BEHAVIOR CHANGE,NO - BEHAVIOR CHANGE,yes,NO - BEHAVIOR CHANGE,yes,yes,Sonnet 4.6 High Effort,2026-10-20,Marks,
-19,CE,Rename Field,Eclipse,NO - COMPILATION ERROR,YES,no,YES,no,yes,Sonnet 4.6 High Effort,2026-10-20,Marks,
-20,BC,Rename Method,NetBeans,NO - BEHAVIOR CHANGE,NO - BEHAVIOR CHANGE,yes,YES,no,no,Sonnet 4.6 High Effort,2026-10-20,Marks,
-21,CE,Rename Method,Eclipse,NO - COMPILATION ERROR,YES,no,NO - COMPILATION ERROR,yes,no,Sonnet 4.6 High Effort,2026-10-20,Marks,
-50,BC,Rename Variable,NetBeans,NO - BEHAVIOR CHANGE,NO - BEHAVIOR CHANGE,yes,NO - BEHAVIOR CHANGE,yes,yes,Sonnet 4.6 High Effort,2026-10-20,Marks,
-51,CE,Rename Method,NetBeans,NO - COMPILATION ERROR,NO - COMPILATION ERROR,yes,NO - COMPILATION ERROR,yes,yes,Sonnet 4.6 High Effort,2026-10-20,Marks,
-53,BC,Rename Variable,NetBeans,NO - BEHAVIOR CHANGE,NO - BEHAVIOR CHANGE,yes,NO - BEHAVIOR CHANGE,yes,yes,Sonnet 4.6 High Effort,2026-10-20,Marks,
-54,BC,Rename Method,NetBeans,NO - BEHAVIOR CHANGE,NO - BEHAVIOR CHANGE,yes,NO - BEHAVIOR CHANGE,yes,yes,Sonnet 4.6 High Effort,2026-10-20,Marks,
-55,CE,Rename Method,NetBeans,NO - COMPILATION ERROR,NO - COMPILATION ERROR,yes,NO - COMPILATION ERROR,yes,yes,Sonnet 4.6 High Effort,2026-10-20,Marks,
-56,CE,Extract Local Variable,NetBeans,NO - COMPILATION ERROR,,not run,NO - COMPILATION ERROR,yes,,Sonnet 4.6 High Effort,2026-10-20,Marks,not run: no output saved
+﻿"id","bug_type","refactoring","tool","raw_json","expected_verdict","model_verdict","correct","authors_verdict","authors_correct","agrees_with_authors","model_version","run_date","run_by","note"
+"2","BC","Add Parameter","Eclipse","repaired (curly quotes)","NO - BEHAVIOR CHANGE","NO - BEHAVIOR CHANGE","yes","NO - BEHAVIOR CHANGE","yes","yes","Sonnet 4.6 Low Effort","2026-10-12","Maksims","website pilot run (low effort)"
+"3","CE","Add Parameter","NetBeans","lenient (fields read directly)","NO - COMPILATION ERROR","NO - BEHAVIOR CHANGE","no","NO - COMPILATION ERROR","yes","no","Sonnet 4.6 Low Effort","2026-10-12","Maksims","website pilot run (low effort)"
+"4","BC","Encapsulate Field","NetBeans","valid","NO - BEHAVIOR CHANGE","NO - BEHAVIOR CHANGE","yes","NO - BEHAVIOR CHANGE","yes","yes","Sonnet 4.6 High Effort","2026-10-12","Maksims",""
+"6","BC","Move Method","Eclipse","valid","NO - BEHAVIOR CHANGE","NO - BEHAVIOR CHANGE","yes","NO - BEHAVIOR CHANGE","yes","yes","Sonnet 4.6 High Effort","2026-10-12","Maksims",""
+"7","CE","Move Method","Eclipse","valid","NO - COMPILATION ERROR","NO - COMPILATION ERROR","yes","NO - COMPILATION ERROR","yes","yes","Sonnet 4.6 High Effort","2026-10-12","Maksims",""
+"8","BC","Pull Up Field","Eclipse","valid","NO - BEHAVIOR CHANGE","NO - BEHAVIOR CHANGE","yes","NO - BEHAVIOR CHANGE","yes","yes","Sonnet 4.6 High Effort","2026-10-12","Maksims",""
+"9","CE","Push Down Field","NetBeans","valid","NO - COMPILATION ERROR","NO - COMPILATION ERROR","yes","NO - COMPILATION ERROR","yes","yes","Sonnet 4.6 High Effort","2026-10-12","Maksims",""
+"10","BC","Pull Up Method","Eclipse","valid","NO - BEHAVIOR CHANGE","NO - BEHAVIOR CHANGE","yes","NO - BEHAVIOR CHANGE","yes","yes","Sonnet 4.6 High Effort","2026-10-12","Maksims",""
+"11","CE","Pull Up Method","Eclipse","valid","NO - COMPILATION ERROR","NO - COMPILATION ERROR","yes","NO - COMPILATION ERROR","yes","yes","Sonnet 4.6 High Effort","2026-10-12","Maksims",""
+"12","BC","Push Down Method","Eclipse","valid","NO - BEHAVIOR CHANGE","NO - BEHAVIOR CHANGE","yes","NO - BEHAVIOR CHANGE","yes","yes","Sonnet 4.6 High Effort","2026-10-12","Maksims",""
+"13","CE","Push Down Field","NetBeans","valid","NO - COMPILATION ERROR","NO - COMPILATION ERROR","yes","NO - COMPILATION ERROR","yes","yes","Sonnet 4.6 High Effort","2026-10-12","Maksims",""
+"14","BC","Push Down Method","Eclipse","lenient (fields read directly)","NO - BEHAVIOR CHANGE","NO - BEHAVIOR CHANGE","yes","NO - BEHAVIOR CHANGE","yes","yes","Sonnet 4.6 High Effort","2026-10-12","Maksims",""
+"15","CE","Push Down Method","Eclipse","valid","NO - COMPILATION ERROR","NO - COMPILATION ERROR","yes","NO - COMPILATION ERROR","yes","yes","Sonnet 4.6 High Effort","2026-10-12","Maksims",""
+"16","BC","Rename Class","Eclipse","valid","NO - BEHAVIOR CHANGE","NO - BEHAVIOR CHANGE","yes","NO - BEHAVIOR CHANGE","yes","yes","Sonnet 4.6 High Effort","2026-10-20","Marks",""
+"17","CE","Rename Class","Eclipse","valid","NO - COMPILATION ERROR","NO - COMPILATION ERROR","yes","NO - COMPILATION ERROR","yes","yes","Sonnet 4.6 High Effort","2026-10-20","Marks",""
+"18","BC","Rename Field","NetBeans","valid","NO - BEHAVIOR CHANGE","NO - BEHAVIOR CHANGE","yes","NO - BEHAVIOR CHANGE","yes","yes","Sonnet 4.6 High Effort","2026-10-20","Marks",""
+"19","CE","Rename Field","Eclipse","valid","NO - COMPILATION ERROR","YES","no","YES","no","yes","Sonnet 4.6 High Effort","2026-10-20","Marks",""
+"20","BC","Rename Method","NetBeans","valid","NO - BEHAVIOR CHANGE","NO - BEHAVIOR CHANGE","yes","YES","no","no","Sonnet 4.6 High Effort","2026-10-20","Marks",""
+"21","CE","Rename Method","Eclipse","valid","NO - COMPILATION ERROR","YES","no","NO - COMPILATION ERROR","yes","no","Sonnet 4.6 High Effort","2026-10-20","Marks",""
+"50","BC","Rename Variable","NetBeans","lenient (fields read directly)","NO - BEHAVIOR CHANGE","NO - BEHAVIOR CHANGE","yes","NO - BEHAVIOR CHANGE","yes","yes","Sonnet 4.6 High Effort","2026-10-20","Marks",""
+"51","CE","Rename Method","NetBeans","valid","NO - COMPILATION ERROR","NO - COMPILATION ERROR","yes","NO - COMPILATION ERROR","yes","yes","Sonnet 4.6 High Effort","2026-10-20","Marks",""
+"53","BC","Rename Variable","NetBeans","valid","NO - BEHAVIOR CHANGE","NO - BEHAVIOR CHANGE","yes","NO - BEHAVIOR CHANGE","yes","yes","Sonnet 4.6 High Effort","2026-10-20","Marks",""
+"54","BC","Rename Method","NetBeans","valid","NO - BEHAVIOR CHANGE","NO - BEHAVIOR CHANGE","yes","NO - BEHAVIOR CHANGE","yes","yes","Sonnet 4.6 High Effort","2026-10-20","Marks",""
+"55","CE","Rename Method","NetBeans","valid","NO - COMPILATION ERROR","NO - COMPILATION ERROR","yes","NO - COMPILATION ERROR","yes","yes","Sonnet 4.6 High Effort","2026-10-20","Marks",""
+"56","CE","Extract Local Variable","NetBeans","","NO - COMPILATION ERROR","","not run","NO - COMPILATION ERROR","yes","","Sonnet 4.6 High Effort","2026-10-20","Marks","not run: no output saved"

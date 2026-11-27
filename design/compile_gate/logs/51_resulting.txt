@@ -1,6 +1,7 @@
-﻿javac : C:\Users\marks\Desktop\cs4928\G04-CS4928-P07-Refactoring-Orcales\cases\51\resulting\I.java:2: error: equals(Object) in I cannot override equals(Object) in Object
-At C:\Users\marks\Desktop\cs4928\G04-CS4928-P07-Refactoring-Orcales\design\compile_gate.ps1:16 char:5
-+     javac -cp $jar -d $out $src 2>&1 | Out-File "design\compile_gate\ ...
+﻿javac : C:\Users\marks\Desktop\cs4928\G04-CS4928-P07-Refactoring-Orcales\cases\51\resulting\I.java:2: error: 
+equals(Object) in I cannot override equals(Object) in Object
+At C:\Users\marks\Desktop\cs4928\G04-CS4928-P07-Refactoring-Orcales\design\compile_gate.ps1:18 char:5
++     javac -cp $jar -d $out $src 2>&1 | Out-File (Join-Path $logs "$($ ...
 +     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     + CategoryInfo          : NotSpecified: (C:\Users\marks\...ject) in Object:String) [], RemoteException
     + FullyQualifiedErrorId : NativeCommandError

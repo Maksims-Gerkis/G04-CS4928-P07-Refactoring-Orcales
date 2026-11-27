@@ -1,15 +1,15 @@
-case,verdict,before_verdict_only,test_on_original,test_on_resulting,after_test_executed,correct_after,note
-2,NO - BEHAVIOR CHANGE,correct (unverified),PASS,FAIL,confirmed,yes,
-4,NO - BEHAVIOR CHANGE,correct (unverified),PASS,FAIL,confirmed,yes,
-6,NO - BEHAVIOR CHANGE,correct (unverified),PASS,FAIL,confirmed,yes,
-8,NO - BEHAVIOR CHANGE,correct (unverified),PASS,FAIL,confirmed,yes,
-10,NO - BEHAVIOR CHANGE,correct (unverified),PASS,FAIL,confirmed,yes,
-12,NO - BEHAVIOR CHANGE,correct (unverified),PASS,FAIL,confirmed,yes,
-14,NO - BEHAVIOR CHANGE,correct (unverified),PASS,FAIL,confirmed,yes,
-16,NO - BEHAVIOR CHANGE,correct (unverified),TEST DOES NOT COMPILE,TEST DOES NOT COMPILE,test does not compile,no,"saved output has ""import static org.junit.Assert.;"" (missing *); with * restored the test is confirmed - not counted"
-18,NO - BEHAVIOR CHANGE,correct (unverified),PASS,FAIL,confirmed,yes,
-20,NO - BEHAVIOR CHANGE,correct (unverified),PASS,FAIL,confirmed,yes,
-50,NO - BEHAVIOR CHANGE,correct (unverified),PASS,FAIL,confirmed,yes,
-53,NO - BEHAVIOR CHANGE,correct (unverified),PASS,FAIL,confirmed,yes,
-54,NO - BEHAVIOR CHANGE,correct (unverified),PASS,FAIL,confirmed,yes,
-seed1,NO - BEHAVIOR CHANGE,correct (unverified),PASS,FAIL,confirmed,yes,seeded Event B bug; check verdict in seed1.json
+﻿"case","raw_json","verdict","before_verdict_only","test_on_original","test_on_resulting","after_test_executed","correct_after","note"
+"2","repaired (curly quotes)","NO - BEHAVIOR CHANGE","correct (unverified)","PASS","FAIL","confirmed","yes",""
+"4","valid","NO - BEHAVIOR CHANGE","correct (unverified)","PASS","FAIL","confirmed","yes",""
+"6","valid","NO - BEHAVIOR CHANGE","correct (unverified)","PASS","FAIL","confirmed","yes",""
+"8","valid","NO - BEHAVIOR CHANGE","correct (unverified)","PASS","FAIL","confirmed","yes",""
+"10","valid","NO - BEHAVIOR CHANGE","correct (unverified)","PASS","FAIL","confirmed","yes",""
+"12","valid","NO - BEHAVIOR CHANGE","correct (unverified)","PASS","FAIL","confirmed","yes",""
+"14","lenient (fields read directly)","NO - BEHAVIOR CHANGE","correct (unverified)","PASS","FAIL","confirmed","yes",""
+"16","valid","NO - BEHAVIOR CHANGE","correct (unverified)","TEST DOES NOT COMPILE","TEST DOES NOT COMPILE","test does not compile","no","saved output has ""import static org.junit.Assert.;"" (missing *); with * restored the test is confirmed - not counted"
+"18","valid","NO - BEHAVIOR CHANGE","correct (unverified)","PASS","FAIL","confirmed","yes",""
+"20","valid","NO - BEHAVIOR CHANGE","correct (unverified)","PASS","FAIL","confirmed","yes",""
+"50","lenient (fields read directly)","NO - BEHAVIOR CHANGE","correct (unverified)","PASS","FAIL","confirmed","yes",""
+"53","valid","NO - BEHAVIOR CHANGE","correct (unverified)","PASS","FAIL","confirmed","yes",""
+"54","valid","NO - BEHAVIOR CHANGE","correct (unverified)","PASS","FAIL","confirmed","yes",""
+"seed1","valid","NO - BEHAVIOR CHANGE","correct (unverified)","PASS","FAIL","confirmed","yes","seeded Event B bug"

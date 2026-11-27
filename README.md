@@ -33,7 +33,9 @@ IDs 1, 5, 22–49 and 52 do not exist in the dataset.
 | `cases/<id>/original`, `cases/<id>/resulting` | Java programs before and after the refactoring, copied from `artifacts/dataset/<id>`. In BC cases, `*BehaviorTest.java` is the authors' reference test and is never sent to the model. |
 | `prompts/<id>.txt` | Prompt sent to the model: the `prompt` column of sheet `results-claude4.6sonnet`, unchanged. |
 | `raw_outputs/<id>.json` | The model's raw JSON response (verdict, explanation, junit_test). |
-| `analysis/scores.csv` | M2 per-case scoring. |
+| `analysis/scores.csv` | M2 per-case scoring, produced by `analysis/make_scores.ps1`. |
+| `analysis/authors_reference.csv` | Bug type, refactoring, tool and the authors' Claude verdict for our 25 cases, extracted from `data.xlsx` by `analysis/extract_reference.py`. |
+| `analysis/run_metadata.csv` | Who ran each case, when, and with which settings. |
 | `notes/deviations.md` | Run log and deviations from the paper. |
 | `design/` | M4 design intervention (the compile check): scripts, logs and the before/after comparison. |
 | `event_b/` | Change Event B: seeded behaviour-change bug, Claude's generated tests, run logs and the before/after comparison. |
@@ -48,7 +50,7 @@ IDs 1, 5, 22–49 and 52 do not exist in the dataset.
 - **Scoring** (against the dataset's ground-truth bug type):
     - A CE case is correct if the verdict is `NO - COMPILATION ERROR`.
     - A BC case is correct if the verdict is `NO - BEHAVIOR CHANGE`.
-    - Invalid JSON counts as incorrect.
+    - Replies were copied by hand from the Workbench. Four saved replies (2, 3, 14, 50) are not valid JSON as saved, because of copy errors (curly quotes, unescaped quotes), not model errors. Their fields are read leniently, and the `raw_json` column in `analysis/scores.csv` records this for each case. Under a strict rule (invalid JSON counts as wrong), M2 would be 18/24 and Event B 10/13.
     - Agreement with the authors' Claude verdict is reported separately (`agrees_with_authors` in `analysis/scores.csv`).
 - **Reference:** the authors' Claude Sonnet 4.6 run on the same 25 IDs scored 23/25 (CE 11/12, BC 12/13).
 - **Decision rule:** reproduced if our result is within ±2 cases of the reference.
@@ -110,25 +112,31 @@ This applies separation of concerns: each step has a single responsibility.
 
 ## How to re-run
 
-Requirements: JDK 21 and Windows PowerShell. Run these commands from the repository root.
+Requirements: JDK 21 (`javac` and `java` on PATH) and PowerShell, either Windows PowerShell 5.1 or PowerShell 7 on Windows, macOS or Linux. Run every command from the repository root. Each script regenerates one committed result; after running them, `git status` should show no changes to the CSV files except line endings.
 
-**1. Model runs.** For each case, paste `prompts/<id>.txt` into a new Claude Sonnet 4.6 session (API, effort high). Save the response unchanged as `raw_outputs/<id>.json`.
+**1. Model runs (manual, not re-runnable).** For each case, paste `prompts/<id>.txt` into a new Claude Sonnet 4.6 session (API, effort high) and save the reply unchanged as `raw_outputs/<id>.json`. Model replies are not deterministic, so the saved prompts and raw replies are the record of this step. Every later step is scripted from them.
 
-**2. Compile check and comparison:**
+**2. M2 scoring** (RQ1 and RQ2: 21/24, CE 8/11, BC 13/13):
+```powershell
+powershell -ExecutionPolicy Bypass -File analysis\make_scores.ps1
+```
+This writes `analysis/scores.csv` from `raw_outputs/`, `analysis/authors_reference.csv` and `analysis/run_metadata.csv`. To rebuild `authors_reference.csv` from the authors' artefact, which needs Python 3 and `openpyxl`, run `python analysis/extract_reference.py path/to/data.xlsx`. It also checks that the paper's scoring rule reproduces the published 214/226.
+
+**3. M4 compile check** (frozen 21/25, then 25/25 with the check):
 ```powershell
 powershell -ExecutionPolicy Bypass -File design\compile_gate.ps1
 powershell -ExecutionPolicy Bypass -File design\make_results.ps1
 ```
 - `compile_gate.ps1` compiles every case's original and resulting program. It writes the logs to `design/compile_gate/logs/` and a summary to `design/compile_gate/compile_results.csv`.
-- `make_results.ps1` applies the compile check to the saved verdicts. It writes `design/results.csv` and prints the totals.
+- `make_results.ps1` applies the compile check to the saved verdicts and writes `design/results.csv`.
 
-**3. Event B test execution.** This runs Claude's saved `junit_test` for each BC case against both versions:
+**4. Event B test execution** (13 BC cases plus seed1: 12/13 confirmed, seed1 confirmed):
 ```powershell
-python event_b\run_bc_tests.py . event_b\out lib\junit-platform-console-standalone-1.10.2.jar
+powershell -ExecutionPolicy Bypass -File event_b\run_bc_tests.ps1
 ```
-- The script requires Python 3 and JDK 21.
-- The classpath separator in the script is `:`. On Windows, change it to `;`.
-- Seed1 was run locally in PowerShell with `javac` and `org.junit.runner.JUnitCore`. See `event_b/README.md`.
+This extracts Claude's `junit_test` from each reply into `event_b/tests/<id>/`, runs it against the original and the resulting program, and writes `event_b/logs/` and `event_b/comparison.csv`.
+
+Compiled classes go to `build/`, which is not committed.
 
 ## Deviations and limitations
 
@@ -160,6 +168,7 @@ See `notes/deviations.md` for the full run log.
 
 AI assistance (Claude) was used to draft the research questions and tracker wording, to write the compile-check scripts and the Event B test runner, and to construct the seeded Event B bug. The outputs were checked against the repository and `data.xlsx`. AI errors that were found and corrected:
 - The first compile-check script missed Java files in package subfolders (case 13).
-- The first results script could not read outputs containing curly quotes.
+- The first results script could not read outputs containing curly quotes. A later version still failed on Windows PowerShell 5.1, because the AI-generated file contained literal curly-quote characters, which 5.1 misreads in a UTF-8 file without a BOM. That left case 2 blank (24/25). All scripts are now plain ASCII, and each was checked to reproduce the committed results.
+- The first Event B runner (Python) only worked on Linux and macOS. It has been replaced by `event_b/run_bc_tests.ps1`, and the test file `CounterTest.java` was renamed to match its class.
 - An early AI claim about the JUnit jar was wrong; the jar already includes JUnit 4.
 
